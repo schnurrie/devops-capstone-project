@@ -13,6 +13,7 @@ from . import app  # Import Flask application
 # Health Endpoint
 ############################################################
 @app.route("/health")
+
 def health():
     """Health Status"""
     return jsonify(dict(status="OK")), status.HTTP_200_OK
@@ -21,6 +22,7 @@ def health():
 # GET INDEX
 ######################################################################
 @app.route("/")
+
 def index():
     """Root URL response"""
     return (
@@ -36,6 +38,7 @@ def index():
 # CREATE A NEW ACCOUNT
 ######################################################################
 @app.route("/accounts", methods=["POST"])
+
 def create_accounts():
     """
     Creates an Account
@@ -111,6 +114,7 @@ def create_accounts():
 
         return account.serialize(), status.HTTP_200_OK
 
+    
     ######################################################################
     # DELETE AN ACCOUNT
     ######################################################################
@@ -127,6 +131,7 @@ def create_accounts():
             account.delete()
 
         return "", status.HTTP_204_NO_CONTENT
+
 
 ######################################################################
 #  U T I L I T Y   F U N C T I O N S
